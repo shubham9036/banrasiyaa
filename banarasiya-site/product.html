@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Product — Banarasiya Silk Sarees &amp; Craft</title>
+  <meta name="description" content="Product details — Banarasiya Silk Sarees &amp; Craft">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <h1>Banarasiya Silk Sarees &amp; Craft</h1>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact / Order</a>
+      </nav>
+      <div class="contact-quick">
+        <a href="tel:+918009854081">📞 8009854081</a>
+        <a href="https://wa.me/918707457279" target="_blank" rel="noreferrer">💬 WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap product-page">
+    <a href="products.html" class="back">← Back to products</a>
+    <div class="product-detail">
+      <div class="pd-image">
+        <img id="pd-img" src="images/sample1.svg" alt="Product image">
+      </div>
+      <div class="pd-info">
+        <h2 id="pd-name">Banarasiya Maroon Saree</h2>
+        <div class="meta" id="pd-category">Saree</div>
+        <div class="pd-price" id="pd-price">₹9,500</div>
+        <p class="pd-desc" id="pd-desc">Handwoven gold-zari motifs — sample description.</p>
+
+        <div class="pd-actions">
+          <a id="wa-order" class="btn primary" target="_blank" rel="noreferrer">Order on WhatsApp</a>
+        </div>
+
+        <hr>
+
+        <h3>Place an Order (Netlify Form)</h3>
+        <form name="order" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="order-form">
+          <input type="hidden" name="form-name" value="order">
+          <p class="hide"><label>Don’t fill this out if you're human: <input name="bot-field"></label></p>
+          <label>Name <input type="text" name="name" required></label>
+          <label>Phone <input type="tel" name="phone" required></label>
+          <label>Product <input type="text" id="form-product" name="product" readonly></label>
+          <label>Quantity <input type="number" name="quantity" min="1" value="1" required></label>
+          <label>Address <textarea name="address" rows="3" required></textarea></label>
+          <button type="submit" class="btn">Send Order</button>
+        </form>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <strong>Banarasiya Silk Sarees &amp; Craft</strong>
+        <address>Namoghat, Varanasi, Uttar Pradesh, India</address>
+      </div>
+      <div>
+        <a href="tel:+918009854081">📞 8009854081</a>
+        <a href="https://wa.me/918009854081">💬 WhatsApp</a>
+      </div>
+      <div class="small">© <span id="year"></span> Banarasiya Silk Sarees &amp; Craft</div>
+    </div>
+  </footer>
+
+  <script>
+    // Parse product details from query params and populate the page.
+    const params = new URLSearchParams(location.search);
+    const name = params.get('name') || 'Banarasiya Maroon Saree';
+    const price = params.get('price') || '9500';
+    const img = params.get('img') || 'images/sample1.svg';
+    const desc = params.get('desc') || 'Handwoven gold-zari motifs.';
+    const category = params.get('category') || 'Saree';
+
+    document.getElementById('pd-name').textContent = name;
+    document.getElementById('pd-price').textContent = '₹' + Number(price).toLocaleString('en-IN');
+    document.getElementById('pd-desc').textContent = decodeURIComponent(desc);
+    document.getElementById('pd-img').src = img;
+    document.getElementById('pd-img').alt = name;
+    document.getElementById('pd-category').textContent = category;
+    document.getElementById('form-product').value = name;
+
+    const waLink = 'https://wa.me/91' + '8009854081' + '?text=' + encodeURIComponent(`I want to order ${name} – ₹${price}`);
+    document.getElementById('wa-order').href = waLink;
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
