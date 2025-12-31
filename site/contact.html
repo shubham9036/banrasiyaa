@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact & Orders — Banarasiya Silk Sarees</title>
+  <meta name="description" content="Contact Banarasiya Silk Sarees & Craft — place orders via WhatsApp or the form.">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <h1>Banarasiya Silk Sarees &amp; Craft</h1>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html" class="active">Contact / Order</a>
+      </nav>
+      <div class="contact-quick">
+        <a href="tel:+918009854081">📞 8009854081</a>
+        <a href="https://wa.me/918707457279" target="_blank" rel="noreferrer">💬 WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap contact-page">
+    <h2>Contact &amp; Place an Order</h2>
+
+    <div class="grid-2">
+      <section>
+        <h3>Contact Information</h3>
+        <p><strong>Address</strong><br>Namoghat, Varanasi, Uttar Pradesh, India</p>
+        <p><strong>Phone</strong><br><a href="tel:+918009854081">8009854081</a><br><a href="tel:+918707457279">8707457279</a></p>
+        <p><strong>WhatsApp</strong><br><a href="https://wa.me/918009854081" target="_blank" rel="noreferrer">Chat on WhatsApp</a></p>
+
+        <h3>Find Us</h3>
+        <div class="map-wrap">
+          <iframe title="Namoghat, Varanasi" src="https://www.google.com/maps?q=Namoghat,+Varanasi&output=embed" loading="lazy"></iframe>
+        </div>
+      </section>
+
+      <section>
+        <h3>Order Form (Netlify)</h3>
+        <form name="order" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="order-form">
+          <input type="hidden" name="form-name" value="order">
+          <p class="hide"><label>Don’t fill this out if you're human: <input name="bot-field"></label></p>
+          <label>Name <input type="text" name="name" required></label>
+          <label>Phone <input type="tel" name="phone" required></label>
+          <label>Product Name <input type="text" name="product" required></label>
+          <label>Quantity <input type="number" name="quantity" min="1" value="1" required></label>
+          <label>Address <textarea name="address" rows="4" required></textarea></label>
+          <button type="submit" class="btn primary">Send Order</button>
+        </form>
+
+        <h4>Or order on WhatsApp</h4>
+        <a class="btn" href="https://wa.me/918009854081?text=I%20want%20to%20place%20an%20order" target="_blank" rel="noreferrer">Order on WhatsApp</a>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <strong>Banarasiya Silk Sarees &amp; Craft</strong>
+        <address>Namoghat, Varanasi, Uttar Pradesh, India</address>
+      </div>
+      <div>
+        <a href="tel:+918009854081">📞 8009854081</a>
+      </div>
+      <div class="small">© <span id="year"></span> Banarasiya Silk Sarees &amp; Craft</div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
