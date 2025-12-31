@@ -1,0 +1,11 @@
+{
+  "name": "banrasiyaa-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static site for Banarasiya Silk Sarees & Craft (no build required)",
+  "scripts": {
+    "build": "echo \"No build required; static site is in ./site\""
+  },
+  "author": "Banarasiya Silk Sarees & Craft",
+  "license": "UNLICENSED"
+}
