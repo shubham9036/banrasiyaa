@@ -82,6 +82,7 @@
     const img = params.get('img') || 'images/sample1.svg';
     const desc = params.get('desc') || 'Handwoven gold-zari motifs.';
     const category = params.get('category') || 'Saree';
+    const phone = params.get('phone') || '8009854081';
 
     document.getElementById('pd-name').textContent = name;
     document.getElementById('pd-price').textContent = '₹' + Number(price).toLocaleString('en-IN');
@@ -91,7 +92,7 @@
     document.getElementById('pd-category').textContent = category;
     document.getElementById('form-product').value = name;
 
-    const waLink = 'https://wa.me/91' + '8009854081' + '?text=' + encodeURIComponent(`I want to order ${name} – ₹${price}`);
+    const waLink = 'https://wa.me/91' + phone + '?text=' + encodeURIComponent(`I want to order ${name} – ₹${price}`);
     document.getElementById('wa-order').href = waLink;
 
     document.getElementById('year').textContent = new Date().getFullYear();
